@@ -17,6 +17,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var offsetValueLabel: UILabel!
     @IBOutlet weak var topInsetSlider: UISlider!
     @IBOutlet weak var topInsetValueLabel: UILabel!
+    @IBOutlet weak var bottomInsetSlider: UISlider!
+    @IBOutlet weak var bottomInsetValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,13 @@ final class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateOffsetViews(scrollView)
+        configure()
+    }
+    
+    private func configure() {
         configureOffsetSlider()
         configureTopInsetSlider()
+        configureBottomInsetSlider()
     }
     
     private func configureOffsetSlider() {
@@ -41,6 +48,12 @@ final class ViewController: UIViewController {
         topInsetSlider.minimumValue = Float(-(scrollView.contentSize.height - scrollView.frame.height))
         topInsetSlider.maximumValue = Float(scrollView.frame.height)
         topInsetSlider.value = 0
+    }
+    
+    private func configureBottomInsetSlider() {
+        bottomInsetSlider.minimumValue = Float(-(scrollView.contentSize.height - scrollView.frame.height))
+        bottomInsetSlider.maximumValue = Float(scrollView.frame.height)
+        bottomInsetSlider.value = 0
     }
     
     private func updateOffsetViews(_ scrollView: UIScrollView) {
@@ -60,6 +73,12 @@ final class ViewController: UIViewController {
         topInsetValueLabel.text = String(Int(sender.value))
         let currentInset = scrollView.contentInset
         scrollView.contentInset = UIEdgeInsets(top: CGFloat(sender.value), left: currentInset.left, bottom: currentInset.bottom, right: currentInset.right)
+    }
+    
+    @IBAction func bottomInsetSliderValueChanged(_ sender: UISlider) {
+        bottomInsetValueLabel.text = String(Int(sender.value))
+        let currentInset = scrollView.contentInset
+        scrollView.contentInset = UIEdgeInsets(top: currentInset.top, left: currentInset.left, bottom: CGFloat(sender.value), right: currentInset.right)
     }
 }
 
