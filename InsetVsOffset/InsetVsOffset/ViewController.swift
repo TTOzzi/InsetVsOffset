@@ -15,6 +15,8 @@ final class ViewController: UIViewController {
     @IBOutlet weak var bottomOffset: NSLayoutConstraint!
     @IBOutlet weak var offsetSlider: UISlider!
     @IBOutlet weak var offsetValueLabel: UILabel!
+    @IBOutlet weak var topInsetSlider: UISlider!
+    @IBOutlet weak var topInsetValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ final class ViewController: UIViewController {
         super.viewDidAppear(animated)
         updateOffsetViews(scrollView)
         configureOffsetSlider()
+        configureTopInsetSlider()
     }
     
     private func configureOffsetSlider() {
@@ -32,6 +35,12 @@ final class ViewController: UIViewController {
         offsetSlider.minimumValue = 0
         offsetSlider.maximumValue = Float(offset)
         offsetSlider.value = 0
+    }
+    
+    private func configureTopInsetSlider() {
+        topInsetSlider.minimumValue = Float(-(scrollView.contentSize.height - scrollView.frame.height))
+        topInsetSlider.maximumValue = Float(scrollView.frame.height)
+        topInsetSlider.value = 0
     }
     
     private func updateOffsetViews(_ scrollView: UIScrollView) {
@@ -45,6 +54,12 @@ final class ViewController: UIViewController {
         offsetValueLabel.text = String(Int(sender.value))
         scrollView.contentOffset = CGPoint(x: 0, y: CGFloat(sender.value))
         updateOffsetViews(scrollView)
+    }
+    
+    @IBAction func topInsetSliderValueChanged(_ sender: UISlider) {
+        topInsetValueLabel.text = String(Int(sender.value))
+        let currentInset = scrollView.contentInset
+        scrollView.contentInset = UIEdgeInsets(top: CGFloat(sender.value), left: currentInset.left, bottom: currentInset.bottom, right: currentInset.right)
     }
 }
 
