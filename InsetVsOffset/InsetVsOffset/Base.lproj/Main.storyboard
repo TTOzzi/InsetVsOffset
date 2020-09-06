@@ -66,6 +66,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomOffset" destination="63x-sO-qkj" id="fko-sA-Mha"/>
+                        <outlet property="scrollView" destination="9Ef-Q9-itY" id="ON9-0w-U4h"/>
+                        <outlet property="topOffset" destination="7Sj-Qx-ttV" id="hXS-56-ufh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
