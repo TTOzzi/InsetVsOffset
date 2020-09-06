@@ -36,13 +36,33 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="N8t-St-taK"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KLy-DZ-XzH"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-oV-Jaz" userLabel="TopOffsetView">
+                                <rect key="frame" x="0.0" y="202.5" width="414" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="7Sj-Qx-ttV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkD-zJ-5IU" userLabel="BottomOffsetView">
+                                <rect key="frame" x="0.0" y="693.5" width="414" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="63x-sO-qkj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="CkD-zJ-5IU" firstAttribute="top" secondItem="9Ef-Q9-itY" secondAttribute="bottom" id="0Et-dl-cg2"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4mW-FJ-TAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ef-Q9-itY" secondAttribute="trailing" id="B0Q-mV-w7d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CkD-zJ-5IU" secondAttribute="trailing" id="P8K-vS-yIa"/>
+                            <constraint firstItem="6Lg-oV-Jaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PSH-H9-ZTU"/>
+                            <constraint firstItem="CkD-zJ-5IU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="acX-3d-8tc"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bQC-4Z-YYo"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="hrJ-zu-vlI"/>
+                            <constraint firstItem="9Ef-Q9-itY" firstAttribute="top" secondItem="6Lg-oV-Jaz" secondAttribute="bottom" id="jW3-ex-08P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Lg-oV-Jaz" secondAttribute="trailing" id="rb8-DT-XnJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
