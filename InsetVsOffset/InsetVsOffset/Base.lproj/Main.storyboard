@@ -50,24 +50,53 @@
                                     <constraint firstAttribute="height" id="63x-sO-qkj"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cG-jn-4ag">
+                                <rect key="frame" x="128" y="693.5" width="273" height="31"/>
+                                <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="offsetSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UXg-1Q-ZCN"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMJ-os-QE8">
+                                <rect key="frame" x="15" y="698" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="1cG-cB-vQO">
+                                <rect key="frame" x="75" y="698" width="10.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CkD-zJ-5IU" firstAttribute="top" secondItem="9Ef-Q9-itY" secondAttribute="bottom" id="0Et-dl-cg2"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4mW-FJ-TAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ef-Q9-itY" secondAttribute="trailing" id="B0Q-mV-w7d"/>
+                            <constraint firstItem="0cG-jn-4ag" firstAttribute="top" secondItem="9Ef-Q9-itY" secondAttribute="bottom" id="EQ8-8n-YKf"/>
+                            <constraint firstItem="1cG-cB-vQO" firstAttribute="leading" secondItem="CMJ-os-QE8" secondAttribute="trailing" constant="8" id="Kdf-NF-m94"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CkD-zJ-5IU" secondAttribute="trailing" id="P8K-vS-yIa"/>
                             <constraint firstItem="6Lg-oV-Jaz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PSH-H9-ZTU"/>
+                            <constraint firstItem="CMJ-os-QE8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="SSk-VQ-8rf"/>
                             <constraint firstItem="CkD-zJ-5IU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="acX-3d-8tc"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bQC-4Z-YYo"/>
+                            <constraint firstItem="1cG-cB-vQO" firstAttribute="centerY" secondItem="0cG-jn-4ag" secondAttribute="centerY" id="da9-cO-n80"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="hrJ-zu-vlI"/>
                             <constraint firstItem="9Ef-Q9-itY" firstAttribute="top" secondItem="6Lg-oV-Jaz" secondAttribute="bottom" id="jW3-ex-08P"/>
+                            <constraint firstItem="0cG-jn-4ag" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1cG-cB-vQO" secondAttribute="trailing" constant="8" id="oNE-ed-emF"/>
+                            <constraint firstItem="CMJ-os-QE8" firstAttribute="centerY" secondItem="0cG-jn-4ag" secondAttribute="centerY" id="q4W-d1-IDt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Lg-oV-Jaz" secondAttribute="trailing" id="rb8-DT-XnJ"/>
+                            <constraint firstItem="0cG-jn-4ag" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="sZi-q1-HDU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0cG-jn-4ag" secondAttribute="trailing" constant="15" id="yFh-4k-hIp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bottomOffset" destination="63x-sO-qkj" id="fko-sA-Mha"/>
+                        <outlet property="offsetSlider" destination="0cG-jn-4ag" id="rF3-lc-zCI"/>
+                        <outlet property="offsetValueLabel" destination="1cG-cB-vQO" id="q9z-Go-XAk"/>
                         <outlet property="scrollView" destination="9Ef-Q9-itY" id="ON9-0w-U4h"/>
                         <outlet property="topOffset" destination="7Sj-Qx-ttV" id="hXS-56-ufh"/>
                     </connections>
