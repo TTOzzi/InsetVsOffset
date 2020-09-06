@@ -9,16 +9,16 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var topOffset: NSLayoutConstraint!
-    @IBOutlet weak var bottomOffset: NSLayoutConstraint!
-    @IBOutlet weak var offsetSlider: UISlider!
-    @IBOutlet weak var offsetValueLabel: UILabel!
-    @IBOutlet weak var topInsetSlider: UISlider!
-    @IBOutlet weak var topInsetValueLabel: UILabel!
-    @IBOutlet weak var bottomInsetSlider: UISlider!
-    @IBOutlet weak var bottomInsetValueLabel: UILabel!
+    
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var topOffset: NSLayoutConstraint!
+    @IBOutlet private weak var bottomOffset: NSLayoutConstraint!
+    @IBOutlet private weak var offsetSlider: UISlider!
+    @IBOutlet private weak var offsetValueLabel: UILabel!
+    @IBOutlet private weak var topInsetSlider: UISlider!
+    @IBOutlet private weak var topInsetValueLabel: UILabel!
+    @IBOutlet private weak var bottomInsetSlider: UISlider!
+    @IBOutlet private weak var bottomInsetValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,22 +63,29 @@ final class ViewController: UIViewController {
         bottomOffset.constant = bottomOffsetConstant >= 0 ? bottomOffsetConstant : 0
     }
     
-    @IBAction func offsetSliderValueChanged(_ sender: UISlider) {
+    @IBAction private func offsetSliderValueChanged(_ sender: UISlider) {
         offsetValueLabel.text = String(Int(sender.value))
-        scrollView.contentOffset = CGPoint(x: 0, y: CGFloat(sender.value))
+        scrollView.contentOffset = CGPoint(x: 0,
+                                           y: CGFloat(sender.value))
         updateOffsetViews(scrollView)
     }
     
-    @IBAction func topInsetSliderValueChanged(_ sender: UISlider) {
+    @IBAction private func topInsetSliderValueChanged(_ sender: UISlider) {
         topInsetValueLabel.text = String(Int(sender.value))
         let currentInset = scrollView.contentInset
-        scrollView.contentInset = UIEdgeInsets(top: CGFloat(sender.value), left: currentInset.left, bottom: currentInset.bottom, right: currentInset.right)
+        scrollView.contentInset = UIEdgeInsets(top: CGFloat(sender.value),
+                                               left: currentInset.left,
+                                               bottom: currentInset.bottom,
+                                               right: currentInset.right)
     }
     
-    @IBAction func bottomInsetSliderValueChanged(_ sender: UISlider) {
+    @IBAction private func bottomInsetSliderValueChanged(_ sender: UISlider) {
         bottomInsetValueLabel.text = String(Int(sender.value))
         let currentInset = scrollView.contentInset
-        scrollView.contentInset = UIEdgeInsets(top: currentInset.top, left: currentInset.left, bottom: CGFloat(sender.value), right: currentInset.right)
+        scrollView.contentInset = UIEdgeInsets(top: currentInset.top,
+                                               left: currentInset.left,
+                                               bottom: CGFloat(sender.value),
+                                               right: currentInset.right)
     }
 }
 
